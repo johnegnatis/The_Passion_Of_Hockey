@@ -9,7 +9,7 @@ import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
-import { blogs, mainBlog, featuredBlogs, getRoute } from "../blogs";
+import { blogs, mainBlog, featuredBlogs, getRoute, headerTitle } from "../blogs";
 
 const regularPosts = blogs.filter((_, index) => index > 2);
 
@@ -32,7 +32,7 @@ blogs.forEach((blog) => {
 export default function Blog() {
   return (
     <>
-      <Header title="The Passion of Hockey" />
+      <Header title={headerTitle} />
       <main>
         <MainFeaturedPost post={mainBlog} />
         <Grid container spacing={4}>

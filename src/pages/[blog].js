@@ -5,13 +5,14 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useRouter } from "next/router";
-import { blogs, getRoute } from "../blogs";
+import { blogs, getRoute, headerTitle } from "../blogs";
 import Link from "next/link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
-import { Button } from "@mui/material";
+import { Button, CardMedia } from "@mui/material";
+import Header from "../components/Header";
 function BlogPost() {
   const theme = createTheme({
     palette: {
@@ -25,8 +26,8 @@ function BlogPost() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header title={headerTitle} />
       <Container maxWidth="lg">
-        <Button onClick={() => router.push("/")}>Return to Home</Button>
         <Typography
           component="h1"
           variant="h2"
@@ -41,9 +42,10 @@ function BlogPost() {
             marginBottom: "25px",
           }}
         >
-          <img
-          style={{ maxWidth: '700px', boxShadow: '10px 10px 5px black'}}
-            src={post.image}
+          <CardMedia
+            component="img"
+            sx={{ maxWidth: { sm: '400px'}, maxWidth: '700px' }}
+            image={post.image}
             alt={post.imageText}
           />
         </Container>

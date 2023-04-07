@@ -13,7 +13,7 @@ function RegularPost(props) {
   const { post } = props;
 
   return (
-    <Grid item xs={12} md={12} padding={2}>
+    <Grid item xs={12} md={12} paddingBottom={2} paddingTop={2}>
       <CardActionArea component="a" onClick={() => router.push(getRoute(post))}>
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>

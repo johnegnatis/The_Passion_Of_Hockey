@@ -1,18 +1,23 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import HomeIcon from "@mui/icons-material/Home";
+
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { useRouter } from "next/router";
+import { Container } from "@mui/material";
 
 function Header(props) {
   const { title } = props;
-
+  const router = useRouter();
   return (
-    <React.Fragment>
-      <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Container maxWidth="lg">
+      <Toolbar
+        sx={{ borderBottom: 1, marginBottom: 2, borderColor: "divider" }}
+      >
+        <HomeIcon onClick={() => router.push("/")} sx={{ cursor: "pointer" }} />
         <Typography
           component="h2"
           variant="h5"
@@ -24,13 +29,7 @@ function Header(props) {
           {title}
         </Typography>
       </Toolbar>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
-      >
-      </Toolbar>
-    </React.Fragment>
+    </Container>
   );
 }
 

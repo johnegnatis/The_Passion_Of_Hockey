@@ -86,3 +86,4 @@ export const getRoute = (blog) => {
   title = title.replace(/[^a-z\-]/g, "");
   return title;
 };
+export const headerTitle = "The Passion of Hockey";

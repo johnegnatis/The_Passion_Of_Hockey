@@ -23,6 +23,7 @@ function MainFeaturedPost(props) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundImage: `url(${post.image})`,
+        cursor: "pointer",
       }}
     >
       {/* Increase the priority of the hero background image */}
@@ -46,6 +47,7 @@ function MainFeaturedPost(props) {
       <Grid container>
         <Grid item md={6}>
           <Box
+            onClick={() => router.push(getRoute(post))}
             sx={{
               position: "relative",
               p: { xs: 3, md: 6 },
@@ -57,19 +59,21 @@ function MainFeaturedPost(props) {
               variant="h3"
               color="inherit"
               gutterBottom
+              sx={{ textShadow: "#ffe 1px 0 10px" }}
             >
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            <Typography
+              variant="h5"
+              color="inherit"
+              paragraph
+              sx={{ textShadow: "#ffe 1px 0 10px" }}
+            >
               {post.description}
             </Typography>
-            <Link
-              variant="subtitle1"
-              onClick={() => router.push(getRoute(post))}
-              sx={{ cursor: "pointer", textDecoration: "none" }}
-            >
+            <Typography variant="subtitle1" color="primary">
               Continue reading...
-            </Link>
+            </Typography>
           </Box>
         </Grid>
       </Grid>
