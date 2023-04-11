@@ -1,21 +1,15 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import EmailIcon from "@mui/icons-material/Email";
+import Website from "@mui/icons-material/Web";
 
-import Header from "./Header";
 import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
-import {
-  blogs,
-  mainBlog,
-  featuredBlogs,
-  getRoute,
-  headerTitle,
-} from "../blogs";
+import { blogs, mainBlog, featuredBlogs, getRoute, headerTitle } from "../blogs";
+import { Email } from "@mui/icons-material";
 
 const regularPosts = blogs.filter((_, index) => index > 2);
 
@@ -26,15 +20,11 @@ const sidebar = {
     "For us, hockey is more than just a game. It's a way for our family to come together and bond over a shared interest. We all share a deep passion for the sport, and our favorite NHL team is the Dallas Stars. On this blog, we'll be sharing our thoughts and insights about all things hockey, from the latest NHL news to tips for improving your game. So join us on this journey and be a part of the conversation.",
   ],
   social: [
-    { name: "GitHub", icon: GitHubIcon, url: "https://github.com/johnegnatis" },
-    { name: "Twitter", icon: TwitterIcon },
-    { name: "Facebook", icon: FacebookIcon },
+    { name: "GitHub", icon: GitHubIcon, url: "https://github.com/johnegnatis/hockey-blog" },
+    { name: "Portfolio", icon: Website, url: "https://johnegnatis.github.io/portfolio/" },
+    { name: "jce180001@utdallas.edu", icon: EmailIcon },
   ],
 };
-blogs.forEach((blog) => {
-  console.log(getRoute(blog));
-});
-
 export default function Blog() {
   return (
     <main>
@@ -46,12 +36,7 @@ export default function Blog() {
       </Grid>
       <Grid container spacing={5} sx={{ mt: 3 }}>
         <Main title="From the firehose" posts={regularPosts} />
-        <Sidebar
-          title={sidebar.title}
-          description={sidebar.description}
-          archives={sidebar.archives}
-          social={sidebar.social}
-        />
+        <Sidebar title={sidebar.title} description={sidebar.description} archives={sidebar.archives} social={sidebar.social} />
       </Grid>
     </main>
   );

@@ -11,6 +11,9 @@ import { getRoute } from "../blogs";
 function MainFeaturedPost(props) {
   const router = useRouter();
   const { post } = props;
+  const notHover = "rgba(0,0,0,.5)";
+  const whenHover = "rgba(0,0,0,.35)";
+  const [bgColor, setBgColor] = React.useState(notHover);
 
   return (
     <Paper
@@ -25,15 +28,11 @@ function MainFeaturedPost(props) {
         backgroundImage: `url(${post.image})`,
         cursor: "pointer",
       }}
+      onMouseEnter={() => setBgColor(whenHover)}
+      onMouseLeave={() => setBgColor(notHover)}
     >
       {/* Increase the priority of the hero background image */}
-      {
-        <img
-          style={{ display: "none" }}
-          src={post.image}
-          alt={post.description}
-        />
-      }
+      {<img style={{ display: "none" }} src={post.image} alt={post.description} />}
       <Box
         sx={{
           position: "absolute",
@@ -41,7 +40,7 @@ function MainFeaturedPost(props) {
           bottom: 0,
           right: 0,
           left: 0,
-          backgroundColor: "rgba(0,0,0,.3)",
+          backgroundColor: bgColor,
         }}
       />
       <Grid container>
@@ -54,21 +53,10 @@ function MainFeaturedPost(props) {
               pr: { md: 0 },
             }}
           >
-            <Typography
-              component="h1"
-              variant="h3"
-              color="inherit"
-              gutterBottom
-              sx={{ textShadow: "#ffe 1px 0 10px" }}
-            >
+            <Typography component="h1" variant="h3" color="inherit" gutterBottom sx={{ textShadow: "#ffe 1px 0 10px" }}>
               {post.title}
             </Typography>
-            <Typography
-              variant="h5"
-              color="inherit"
-              paragraph
-              sx={{ textShadow: "#ffe 1px 0 10px" }}
-            >
+            <Typography variant="h5" color="inherit" paragraph sx={{ textShadow: "#ffe 1px 0 10px" }}>
               {post.description}
             </Typography>
             <Typography variant="subtitle1" color="primary">

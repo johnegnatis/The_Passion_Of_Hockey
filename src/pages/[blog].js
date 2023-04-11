@@ -1,18 +1,16 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import { useRouter } from "next/router";
 import { blogs, getRoute, headerTitle } from "../blogs";
-import Link from "next/link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
-import { Button, CardMedia } from "@mui/material";
+import { CardMedia } from "@mui/material";
 import Header from "../components/Header";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+
 function BlogPost() {
   const theme = createTheme({
     palette: {
@@ -21,18 +19,39 @@ function BlogPost() {
   });
   const router = useRouter();
   const { blog } = router.query;
-  const post = blogs.find((blogObj) => blog === getRoute(blogObj));
+  const index = blogs.findIndex((blogObj) => blog === getRoute(blogObj));
+  const post = blogs[index];
+
+  const homeRoute = "/";
+  const nextPostRoute = index + 1 < blogs.length ? getRoute(blogs[index + 1]) : homeRoute;
+  const previousPostRoute = index - 1 >= 0 ? getRoute(blogs[index - 1]) : homeRoute;
+
   if (!post) return <div>post not found</div>;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header title={headerTitle} />
       <Container maxWidth="lg">
-        <Typography
-          component="h1"
-          variant="h2"
-          sx={{ marginBottom: "25px", textAlign: "center" }}
-        >
+        <div style={{ display: "flex", justifyContent: "space-between", cursor: "pointer", WebkitUserSelect: 'none', msUserSelect: 'none', userSelect: 'none' }}>
+          {previousPostRoute !== homeRoute ? (
+            <div onClick={() => router.push(previousPostRoute)} style={{ display: "flex", alignContent: "center" }}>
+              <NavigateBeforeIcon />
+              <span>Previous Post</span>
+            </div>
+          ) : (
+            <div />
+          )}
+          {nextPostRoute !== homeRoute ? (
+            <div onClick={() => router.push(nextPostRoute)} style={{ display: "flex", alignContent: "center" }}>
+              <span>Next Post</span>
+              <NavigateNextIcon />
+            </div>
+          ) : (
+            <div />
+          )}
+        </div>
+        <br />
+        <Typography component="h1" variant="h2" sx={{ marginBottom: "25px", textAlign: "center" }}>
           {post.title}
         </Typography>
         <Container
@@ -44,7 +63,7 @@ function BlogPost() {
         >
           <CardMedia
             component="img"
-            sx={{ maxWidth: { sm: '400px'}, maxWidth: '700px' }}
+            sx={{ maxWidth: { sm: "400px" }, maxWidth: "700px" }}
             image={post.image}
             alt={post.imageText}
           />
@@ -60,10 +79,7 @@ function BlogPost() {
           ))}
         </Container>
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
+      <Footer title="Footer" description="Something here to give the footer a purpose!" />
     </ThemeProvider>
   );
 }

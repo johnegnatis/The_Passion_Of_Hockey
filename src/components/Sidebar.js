@@ -11,32 +11,35 @@ function Sidebar(props) {
 
   return (
     <Grid item xs={12} md={4}>
-      <Paper elevation={0} sx={{ p: 2, backgroundColor: '#333333' }}>
-        <Typography variant="h6" gutterBottom>
+      <Paper elevation={0} sx={{ p: 2, backgroundColor: "#333333" }}>
+        <Typography variant="h6" gutterBottom sx={{ fontWeight: "650" }}>
           {title}
         </Typography>
         {description.map((desc, index) => (
-          <Typography key={index} style={{ paddingBottom: "5px" }}>{desc}</Typography>
+          <Typography key={index} style={{ paddingBottom: "5px" }}>
+            {desc}
+          </Typography>
         ))}
       </Paper>
 
       <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
         Social
       </Typography>
-      {social.map((network) => (
-        <Link
-          display="block"
-          variant="body1"
-          href={network.url}
-          key={network.name}
-          sx={{ mb: 0.5 }}
-        >
+      {social.map((network) => {
+        const stack = (
           <Stack direction="row" spacing={1} alignItems="center">
             <network.icon />
             <span>{network.name}</span>
           </Stack>
-        </Link>
-      ))}
+        );
+        if (network.url)
+          return (
+            <Link display="block" variant="body1" href={network.url} key={network.name} sx={{ mb: 0.5 }}>
+              {stack}
+            </Link>
+          );
+        return stack;
+      })}
     </Grid>
   );
 }

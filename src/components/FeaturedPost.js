@@ -14,14 +14,10 @@ function FeaturedPost(props) {
   const { post } = props;
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea
-        component="a"
-        onClick={() => router.push(getRoute(post))}
-
-      >
+      <CardActionArea component="a" onClick={() => router.push(getRoute(post))}>
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
+            <Typography component="h2" variant="h5" sx={{ fontWeight: "650" }}>
               {post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
@@ -37,7 +33,7 @@ function FeaturedPost(props) {
           <CardMedia
             component="img"
             sx={{ width: 160, display: { xs: "none", sm: "block" } }}
-            image={post.image}
+            src={`${post.image}`}
             alt={post.imageText}
           />
         </Card>

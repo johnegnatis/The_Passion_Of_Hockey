@@ -17,7 +17,7 @@ function RegularPost(props) {
       <CardActionArea component="a" onClick={() => router.push(getRoute(post))}>
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
+            <Typography component="h2" variant="h5" sx={{ fontWeight: "650" }}>
               {post.title}
             </Typography>
             <Typography variant="subtitle1" paragraph>
