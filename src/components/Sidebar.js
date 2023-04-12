@@ -5,10 +5,11 @@ import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import { useRouter } from "next/router";
 
 function Sidebar(props) {
   const { description, social, title } = props;
-
+  const router = useRouter();
   return (
     <Grid item xs={12} md={4}>
       <Paper elevation={0} sx={{ p: 2, backgroundColor: "#333333" }}>

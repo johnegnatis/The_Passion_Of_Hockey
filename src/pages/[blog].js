@@ -32,7 +32,16 @@ function BlogPost() {
       <CssBaseline />
       <Header title={headerTitle} />
       <Container maxWidth="lg">
-        <div style={{ display: "flex", justifyContent: "space-between", cursor: "pointer", WebkitUserSelect: 'none', msUserSelect: 'none', userSelect: 'none' }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            cursor: "pointer",
+            WebkitUserSelect: "none",
+            msUserSelect: "none",
+            userSelect: "none",
+          }}
+        >
           {previousPostRoute !== homeRoute ? (
             <div onClick={() => router.push(previousPostRoute)} style={{ display: "flex", alignContent: "center" }}>
               <NavigateBeforeIcon />
@@ -77,9 +86,12 @@ function BlogPost() {
               <br />
             </>
           ))}
+          <Typography component="p" variant="p" sx={{ textAlign: "center", fontSize: "18px", fontStyle: 'italic' }}>
+            {!!post.author && `Written by ${post.author}`}
+          </Typography>
         </Container>
       </Container>
-      <Footer title="Footer" description="Something here to give the footer a purpose!" />
+      <Footer title="The Passion of Hockey" description="A blog about all things hockey!" />
     </ThemeProvider>
   );
 }

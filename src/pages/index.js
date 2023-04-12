@@ -18,10 +18,7 @@ export default function Home() {
       <Container maxWidth="lg">
         <Blog />
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
+      <Footer title="The Passion of Hockey" description="A blog about all things hockey!" />
     </ThemeProvider>
   );
 }

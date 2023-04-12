@@ -17,8 +17,6 @@ export const blogs = [
   {
     title: "The Importance of Goalies in Hockey",
     description: "Discover why goalies are the unsung heroes of the hockey world and the vital role they play in every game.",
-    // image:
-    //   "https://media.istockphoto.com/id/493584160/photo/ice-hockey-goalie.jpg?s=612x612&w=0&k=20&c=NNfYWb1Lp2ldFjmC0cG3yig18txdfw_EEzcjmNHprzw=",
     image: "images/Goalie.jpg",
     imageText: "Hockey Goalie",
     body: [
@@ -36,14 +34,12 @@ export const blogs = [
       "Discover the incredible career of Connor McDavid, the young NHL superstar who is already making history on the ice.",
     image: "images/ConnorMcDavid.jpg",
     imageText: "Connor McDavid",
-
+    author: "John C. Egnatis",
     body: [
-      "If you're a fan of hockey, you've likely heard the name Connor McDavid before. At just 24 years old, McDavid is already considered one of the best players in the NHL and is widely regarded as the future of hockey.",
-      "McDavid was born in Richmond Hill, Ontario, and started playing hockey at a young age. He quickly developed a reputation as a skilled and talented player, and by the time he was a teenager, he was already making waves in the hockey world.",
-      "In 2015, McDavid was drafted by the Edmonton Oilers as the first overall pick. It was clear from the start that McDavid was a special player; he had incredible speed, skill, and vision on the ice. He quickly became a fan favorite and was named the Oilers' captain in 2016, becoming the youngest captain in NHL history at just 19 years old.",
-      "Since then, McDavid has continued to impress on the ice. He has won numerous awards and accolades, including the Hart Memorial Trophy for the NHL's most valuable player twice (in 2017 and 2021) and the Art Ross Trophy for leading the league in points three times (in 2017, 2018, and 2021). He is also a five-time NHL All-Star and has helped lead the Oilers to the playoffs multiple times.",
-      "But what sets McDavid apart from other players is his incredible speed and ability to make plays at high speeds. He's been clocked at over 30 mph on the ice and has a seemingly effortless ability to weave through defenders and make jaw-dropping plays.",
-      "McDavid is still young and has a long career ahead of him, but he has already cemented his place in NHL history as one of the best players of his generation. He's a true superstar and a joy to watch on the ice, and we can't wait to see what he accomplishes in the years to come.",
+      "If you're a fan of hockey, I am sure you have heard the name Connor McDavid before. At just 24 years old, McDavid is already considered one of the best players in the NHL and is widely regarded as the future of hockey.",
+      "McDavid was born in Richmond Hill, Ontario, close to the birthplace of my father, and started playing hockey at a young age. In Canada, it did not take long before everyone to know about this kid who was making waves in youth hockey. He is given the nickname McJesus as to suggest that he is simply that much better than everyone else.",
+      "In 2015, McDavid was drafted by the Edmonton Oilers as the first overall pick, and he has not disappointed. It was clear from the start that McDavid was a special player. Since then, he has won numerous awards and accolades, including the Hart Memorial Trophy for the NHL's most valuable player twice (in 2017 and 2021) and the Art Ross Trophy for leading the league in points three times (in 2017, 2018, and 2021). He is also a five-time NHL All-Star and has helped lead the Oilers to the playoff’s multiple times.",
+      "For me, what really sets McDavid apart is his incredible speed and puck handling ability. I have had the pleasure of seeing him play live and I would consider it a form of art the way he dismantles team's defenses and scores. McDavid is still young and has a long career ahead of him, but he has already cemented his place in NHL history as one of the best players of his generation. He's a true superstar and a joy to watch on the ice, and we can't wait to see what he accomplishes in the years to come.",
     ],
   },
   {

@@ -3,26 +3,30 @@ import Grid from "@mui/material/Grid";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import Website from "@mui/icons-material/Web";
-
+import PersonIcon from "@mui/icons-material/Person";
 import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
 import { blogs, mainBlog, featuredBlogs, getRoute, headerTitle } from "../blogs";
-import { Email } from "@mui/icons-material";
+import { Email, Person } from "@mui/icons-material";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
 
 const regularPosts = blogs.filter((_, index) => index > 2);
 
 const sidebar = {
   title: "About",
   description: [
-    "As the oldest brother in our family of passionate hockey enthusiasts, I can confidently say that hockey has been a huge part of our lives for as long as I can remember. It all started when we were young, spending countless hours skating and playing with each other. Our love for the game only grew stronger as we got older, and it became a central part of our family dynamic.",
-    "For us, hockey is more than just a game. It's a way for our family to come together and bond over a shared interest. We all share a deep passion for the sport, and our favorite NHL team is the Dallas Stars. On this blog, we'll be sharing our thoughts and insights about all things hockey, from the latest NHL news to tips for improving your game. So join us on this journey and be a part of the conversation.",
+    "Welcome!",
+    "Ever since I can remember, hockey has been a huge part of my life. The first time I stepped on the ice I was two years old. I competed in a youth league when I was in school. And I have been to more Dallas Stars games than I can count.",
+    "Now that I am older, hockey has become a way for our family to come together and bond over a shared interest. On this blog, my family and I will be sharing our passion for all things hockey. From the latest NHL news to controversial opinions, we have it all. Feel free to send me an email if you would like to contribute, and we hope you enjoy your stay.",
   ],
   social: [
+    { name: "John Egnatis", icon: Person },
     { name: "GitHub", icon: GitHubIcon, url: "https://github.com/johnegnatis/hockey-blog" },
     { name: "Portfolio", icon: Website, url: "https://johnegnatis.github.io/portfolio/" },
     { name: "jce180001@utdallas.edu", icon: EmailIcon },
+    { name: "Presentation", icon: SlideshowIcon, url: "https://docs.google.com/presentation/d/15NYbATXTGEznTskxI7Jbf-UKRLEnPfs1k3KsLGp4osI/edit?usp=sharing" },
   ],
 };
 export default function Blog() {
