@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import Website from "@mui/icons-material/Web";
-import PersonIcon from "@mui/icons-material/Person";
 import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
@@ -14,6 +13,11 @@ import SlideshowIcon from "@mui/icons-material/Slideshow";
 
 const regularPosts = blogs.filter((_, index) => index > 2);
 
+const getPlaceholder = (index) => {
+  return { title: `Placeholder ${index}`, description: "placeholder description" };
+};
+const placeholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => getPlaceholder(num));
+
 const sidebar = {
   title: "About",
   description: [
@@ -23,10 +27,14 @@ const sidebar = {
   ],
   social: [
     { name: "John Egnatis", icon: Person },
+    { name: "jce180001@utdallas.edu", icon: EmailIcon },
     { name: "GitHub", icon: GitHubIcon, url: "https://github.com/johnegnatis/hockey-blog" },
     { name: "Portfolio", icon: Website, url: "https://johnegnatis.github.io/portfolio/" },
-    { name: "jce180001@utdallas.edu", icon: EmailIcon },
-    { name: "Presentation", icon: SlideshowIcon, url: "https://docs.google.com/presentation/d/15NYbATXTGEznTskxI7Jbf-UKRLEnPfs1k3KsLGp4osI/edit?usp=sharing" },
+    {
+      name: "Presentation",
+      icon: SlideshowIcon,
+      url: "https://docs.google.com/presentation/d/15NYbATXTGEznTskxI7Jbf-UKRLEnPfs1k3KsLGp4osI/edit?usp=sharing",
+    },
   ],
 };
 export default function Blog() {
@@ -39,7 +47,7 @@ export default function Blog() {
         ))}
       </Grid>
       <Grid container spacing={5} sx={{ mt: 3 }}>
-        <Main title="From the firehose" posts={regularPosts} />
+        <Main title="From the firehose" posts={[...regularPosts, ...placeholders]} />
         <Sidebar title={sidebar.title} description={sidebar.description} archives={sidebar.archives} social={sidebar.social} />
       </Grid>
     </main>

@@ -26,6 +26,9 @@ function BlogPost() {
   const nextPostRoute = index + 1 < blogs.length ? getRoute(blogs[index + 1]) : homeRoute;
   const previousPostRoute = index - 1 >= 0 ? getRoute(blogs[index - 1]) : homeRoute;
 
+  const spanningFont = { fontSize: { sm: "15px", md: "20px", lg: "25px" } };
+  const spanningTitleFont = { fontSize: { sm: "30px", md: "42.5px", lg: "50px" } };
+
   if (!post) return <div>post not found</div>;
   return (
     <ThemeProvider theme={theme}>
@@ -60,7 +63,7 @@ function BlogPost() {
           )}
         </div>
         <br />
-        <Typography component="h1" variant="h2" sx={{ marginBottom: "25px", textAlign: "center" }}>
+        <Typography component="h1" variant="h2" sx={{ marginBottom: "25px", textAlign: "center", ...spanningTitleFont }}>
           {post.title}
         </Typography>
         <Container
@@ -77,18 +80,20 @@ function BlogPost() {
             alt={post.imageText}
           />
         </Container>
+        <Typography component="p" variant="p" sx={{ textAlign: "center", fontStyle: "italic", ...spanningFont }}>
+          {!!post.author && `Written by ${post.author}`}
+          <br />
+          <br />
+        </Typography>
         <Container maxWidth="md">
           {post.body.map((paragraph) => (
             <>
-              <Typography sx={{ fontSize: "24px" }} component="p" variant="p">
+              <Typography component="p" variant="p" sx={spanningFont}>
                 {paragraph}
               </Typography>
               <br />
             </>
           ))}
-          <Typography component="p" variant="p" sx={{ textAlign: "center", fontSize: "18px", fontStyle: 'italic' }}>
-            {!!post.author && `Written by ${post.author}`}
-          </Typography>
         </Container>
       </Container>
       <Footer title="The Passion of Hockey" description="A blog about all things hockey!" />
