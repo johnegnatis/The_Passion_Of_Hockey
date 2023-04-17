@@ -7,7 +7,7 @@ import RegularPost from "./RegularPost";
 import { Pagination } from "@mui/material";
 function Main(props) {
   const { posts, title } = props;
-  const POSTS_PER_COUNT = 4.0;
+  const POSTS_PER_COUNT = 3.0;
   const numPages = Math.ceil(posts.length / POSTS_PER_COUNT);
 
   const [page, setPage] = React.useState(1);
@@ -16,7 +16,6 @@ function Main(props) {
     (_, index) => index >= currentPageStartingIndex && index < currentPageStartingIndex + POSTS_PER_COUNT
   );
   const handlePageChange = (page) => {
-    console.log(page);
     setPage(page);
   };
 

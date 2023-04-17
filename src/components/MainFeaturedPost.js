@@ -12,11 +12,12 @@ function MainFeaturedPost(props) {
   const router = useRouter();
   const { post } = props;
   const notHover = "rgba(0,0,0,.5)";
-  const whenHover = "rgba(0,0,0,.35)";
+  const whenHover = "rgba(0,0,0,.55)";
   const [bgColor, setBgColor] = React.useState(notHover);
 
   return (
     <Paper
+      onClick={() => router.push(getRoute(post))}
       sx={{
         position: "relative",
         backgroundColor: "grey.800",
@@ -46,7 +47,6 @@ function MainFeaturedPost(props) {
       <Grid container>
         <Grid item md={6}>
           <Box
-            onClick={() => router.push(getRoute(post))}
             sx={{
               position: "relative",
               p: { xs: 3, md: 6 },

@@ -5,6 +5,7 @@ export const blogs = [
     image: "images/Miro.jpg",
     imageText: "Miro Heiskanen on the ice",
     author: "Andrew Egnatis",
+    date: "4/12/2023",
     body: [
       "16 nhl.com writers cast their votes on their Norris Trophy picks at the end of the regular season. As Erik Karlsson ran away with the voting. His 100 points as a defensemen make him a lock for the award, but the conversation around the trophy involves multiple deserving defensemen. After Karlsson (76 points), Cale Makar (32), Adam Fox (25) Rasmus Dahlin (23), Josh Morrissey (22), Dougie Hamilton (20), and Quinn Hughes (18), The Dallas Stars’ Miro Heiskanen received a meager 11 points in the voting.",
       "Heiskanen sits tied at eighth in points for Defensemen with 71 after 77 games played. Aside from Karlsson’s 100 points, Hamilton sits in second place with 76. The top of the defensemen scoring race is tight, and Karlsson is the only one to have separated himself from the pack.",
@@ -16,6 +17,7 @@ export const blogs = [
     description: "Learn where the Stanley Cup Playoffs fall short and how they could improve.",
     author: "John G. Egnatis",
     image: "images/StanleyCup.jpeg",
+    date: "4/12/2023",
     imageText: "Alexander Ovechkin Hoisting the Stanley Cup",
     body: [
       "It is said to be the hardest trophy to win in professional team sports. It takes 4 series that are the best of seven. Most series are at least 5 or 6 games, so the eventual Stanley cup winner will play an additional 16-27 games to win but over 22. That is over ¼ of the regular season. This second season is at an increasing intensity. Every game is played more aggressively than the regular season, and many will go into overtime. The overtime game is sudden death, first team to score wins, but can last 1-2-3 additional periods. Injuries become a critical factor as the series is extended, and later the teams go into the next rounds. The referees are also being stretched as they must officiate very close matches, at high speeds and increasing force and physical activity.",
@@ -31,6 +33,7 @@ export const blogs = [
     description: "An optimists outlook on the state of the Anaheim Ducks.",
     author: "Timothy Egnatis",
     image: "images/MightyDucks.jpg",
+    date: "4/13/2023",
     imageText: "The Anaheim Ducks Mascot",
     body: [
       "The Anaheim duck are having a rough season this year but they are a great team in my opinion. One of the ducks star players goes by the name of Trevor Zegras. Trevor has stacked up an impressive 64 points this season. The future is only up from here for the Ducks.",
@@ -43,6 +46,7 @@ export const blogs = [
     image: "images/ConnorMcDavid.jpg",
     imageText: "Connor McDavid",
     author: "John C. Egnatis",
+    date: "4/12/2023",
     body: [
       "If you're a fan of hockey, I am sure you have heard the name Connor McDavid before. At just 24 years old, McDavid is already considered one of the best players in the NHL and is widely regarded as the future of hockey.",
       "McDavid was born in Richmond Hill, Ontario, close to the birthplace of my father, and started playing hockey at a young age. In Canada, it did not take long before everyone to know about this kid who was making waves in youth hockey. He is given the nickname McJesus as to suggest that he is simply that much better than everyone else.",
@@ -60,6 +64,7 @@ export const blogs = [
       "One of the coolest things I got the privilege of experiencing is a little thing they call Shinny up north. Shinny is the equivalent of pickup basketball, just a bunch of kids playing hockey. What surprised me is that people just show up with a pair of gloves, a helmet, a stick, and some skates and duke it out without having to pay a dime. In Texas, ice time is a precious commodity that some people pay top dollar for. And although us Texans like to think of ourselves as the Wild West, we require full gear to play hockey, were as they are nude by comparison. A typical game of Shinny looks like this: The first 15 minutes everyone just shoots and passes. Then all the sticks go in center ice and somebody divides up the sticks into two groups. The remaining time is just fun, easygoing hockey. You are not able to find this sort of thing here in the Lone Star State.",
       "There are many interesting aspects about Canadian culture, but hockey is one of the defining parts of their identity",
     ],
+    date: "4/14/2023",
     image: "images/Shinny.jpg",
     imageText: "A friendly game of Shinny",
   },
@@ -72,8 +77,22 @@ export const blogs = [
       'My dad put it this way: "a good goalie can make a bad team look good, and a bad goalie can make a good team look bad." If your goalie makes a few mistakes the entire team now has the job of recovering a couple goals, which is no easy task in the low scoring game of hockey. Similarly, a goalie that is playing out of his mind can take a low tier team and make them competitive against the best teams. ',
       "I remember watching the 2022 Stanley Cup Playoffs, Dallas vs. Calgary in the first round. The Dallas Stars were by FAR the worse of the teams, and most had counted them out. But their rookie goalie Jake Oettinger had other ideas. Jake put his team on his back, making 40-50 saves a game and nearly upsetting the Calgary Flames. The series ended up going to game 7 and Calgary won in OT. That night Oettinger played out of his mind. The score 3-2 in favor of Calgary; the shots: 67-28.",
     ],
+    date: "4/13/2023",
     image: "images/Goalie.jpg",
     imageText: "Goalie making a save",
+  },
+  {
+    title: "Dallas Stars VS Minnesota Wild Playoff Matchup",
+    description: "Learn about the anticipated 2023 first round playoff matchup",
+    author: "John C. Egnatis",
+    body: [
+      "Last year, the Dallas Stars nearly won the first round against a then formidable opponent, the Calgary Flames, with help from their star goalie. Since then, the Stars have improved tremendously and finished 2nd in their division.",
+      "Minnesota is coming off a hot streak. In March they had a 14 game point streak (no regulation losses), which an incredible stat. This matchup will be something to remember",
+      "Tonight these two teams will face off in what is expected to be a great playoff hockey matchup. Don't miss it!",
+    ],
+    date: "4/17/2023",
+    image: "images/starsVwild.jpg",
+    imageText: "Dallas Stars VS Minnesota Wild",
   },
 ];
 
@@ -86,3 +105,55 @@ export const getRoute = (blog) => {
   return title;
 };
 export const headerTitle = "The Passion of Hockey";
+
+export const wipBlogs = [
+  {
+    title: "The Top 10 NHL Rookies to Watch This Season",
+    description:
+      "Get ahead of the game by checking out these rising NHL stars who are set to take the league by storm this season.",
+  },
+  {
+    title: "Breaking Down the Stanley Cup Finals: A Game-by-Game Analysis",
+    description:
+      "From clutch goals to amazing saves, take a deep dive into each game of the Stanley Cup Finals and relive the drama and excitement.",
+  },
+  {
+    title: "The Greatest Hockey Players of All Time: A Comprehensive List",
+    description:
+      "Discover who made the cut for the greatest hockey players of all time, from legendary stars to modern-day heroes.",
+  },
+  {
+    title: "Why the NHL Needs to Address Its Problem with Player Safety",
+    description: "Protecting players should be a top priority for the NHL - read on to learn why and how it can be done.",
+  },
+  {
+    title: "How Analytics Are Changing the Game of Hockey",
+    description:
+      "Find out how data and analytics are revolutionizing the sport of hockey, from player performance to team strategy.",
+  },
+  {
+    title: "Exploring the World of Minor League Hockey: Prospects and Surprises",
+    description:
+      "Discover the untold stories and exciting players of minor league hockey, and learn why it's a must-watch for true fans of the game.",
+  },
+  {
+    title: "The Most Memorable Moments in NHL History",
+    description:
+      "From iconic goals to unforgettable saves, take a trip down memory lane with these unforgettable moments in NHL history.",
+  },
+  {
+    title: "The Evolution of the Goalie Mask: From Fiberglass to Carbon Fiber",
+    description:
+      "Dive into the history of the goalie mask and how it has evolved over the years, protecting some of the greatest players in NHL history.",
+  },
+  {
+    title: "A Look at the NHL's Most Intense Rivalries",
+    description:
+      "Hockey is all about fierce competition, and these rivalries have taken it to the next level - find out what makes them so intense.",
+  },
+  {
+    title: "Hockey and the Olympics: Why It Matters and How It Can Be Improved",
+    description:
+      "Hockey has been a staple of the Winter Olympics, but there is still room for improvement - read on to find out why it matters and how it can be made even better.",
+  },
+];

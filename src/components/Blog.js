@@ -7,16 +7,11 @@ import MainFeaturedPost from "./MainFeaturedPost";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
-import { blogs, mainBlog, featuredBlogs, getRoute, headerTitle } from "../blogs";
+import { blogs, mainBlog, featuredBlogs, getRoute, headerTitle, wipBlogs } from "../blogs";
 import { Email, Person } from "@mui/icons-material";
 import SlideshowIcon from "@mui/icons-material/Slideshow";
 
 const regularPosts = blogs.filter((_, index) => index > 2);
-
-const getPlaceholder = (index) => {
-  return { title: `Placeholder ${index}`, description: "placeholder description" };
-};
-const placeholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => getPlaceholder(num));
 
 const sidebar = {
   title: "About",
@@ -47,7 +42,7 @@ export default function Blog() {
         ))}
       </Grid>
       <Grid container spacing={5} sx={{ mt: 3 }}>
-        <Main title="From the firehose" posts={[...regularPosts, ...placeholders]} />
+        <Main title="From the firehose" posts={[...regularPosts, ...wipBlogs]} />
         <Sidebar title={sidebar.title} description={sidebar.description} archives={sidebar.archives} social={sidebar.social} />
       </Grid>
     </main>
